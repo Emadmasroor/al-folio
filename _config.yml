@@ -1,5 +1,3 @@
-
-
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
@@ -11,9 +9,8 @@ last_name: Masroor
 email: emad@vt.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Emad Masroor
-footer_text: >
-  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text: 
+  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> using <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 url: https://emadmasroor.github.io
 baseurl: 
@@ -35,8 +32,8 @@ max_width: 800px
 # Open Graph
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+og_image: profile_pic # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -55,7 +52,7 @@ blogger_url: # your blogger URL
 keybase_username: # your keybase user name
 
 contact_note: >
-  The best way to contact me is by email
+  The best way to contact me is by email.
 
 google_analytics: # out your google-analytics code
 
@@ -63,17 +60,20 @@ google_analytics: # out your google-analytics code
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Julia blog  # your blog must have a name for it to show up in the nav bar
+blog_name: Emad's blog  # your blog must have a name for it to show up in the nav bar
 blog_description: >
-  I blog about [Julia](https://julialang.org).
-permalink: /Julia-blog/:year/:title/
+  I (plan to) blog about fluid dynamics, the Julia language, scientific computing, and vortex dynamics. 
+permalink: /blog/:year/:title/
 
 # Pagination
 pagination:
   enabled: true
 
 # Comments
-disqus_shortname: al-folio # put your disqus shortname
+
+# Develop feed for each tag
+feed:
+  tags: true
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -88,9 +88,12 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  blog:
+    output: true
+    permalink: /blog/:path/
 
 news_limit: 5
-
+post_limit: 5
 # -----------------------------------------------------------------------------
 # Jekyll settings
 # -----------------------------------------------------------------------------
@@ -121,6 +124,7 @@ plugins:
   - jekyll/scholar
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-feed
   # - bootstrap
   # - material-sass
 
@@ -130,12 +134,10 @@ plugins:
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
-
+  last_name: Masroor
+  first_name: [Emad]
   style: apa
   locale: en
-
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
@@ -143,11 +145,11 @@ scholar:
   replace_strings: true
   join_strings: true
 
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
+#  details_dir: bibliography
+#  details_layout: bibtex.html
+#  details_link: Details
 
-  query: "@*"
+#  query: "@*"
 
 # -----------------------------------------------------------------------------
 # Optional Features

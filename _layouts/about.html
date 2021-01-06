@@ -37,6 +37,10 @@ layout: default
       {% include selected_papers.html %}
     {% endif %}
 
+    {% if page.blog %}
+      {% include blog_excerpts.html %}
+    {% endif %}
+
     {% if page.social %}
     <div class="social">
       {% include social.html %}

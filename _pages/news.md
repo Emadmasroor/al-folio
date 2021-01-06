@@ -1,14 +1,16 @@
 ---
 layout: page
-title: news
+title: news + events
 permalink: /news/
-description: A growing collection of your cool projects.
+description: Here's what I have been up to recently.
 nav: true
 ---
 
-Hello, world
+{% assign sorted_news = site.news | sort:"date" | reverse %}
+{% for news in sorted_news %}
+<article class="post-content">
+ {{ news.date | date: "%b %d, %Y"}}
+ {{ news.content }}
+<article class="post-content">
+{% endfor %}
 
-  {% assign sorted_news = site.news | sort:"date" | reverse %}
-  {% for news in sorted_news %}
-    {{ news }}
-  {% endfor %}

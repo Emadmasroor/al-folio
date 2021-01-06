@@ -1,0 +1,23 @@
+<div class="blog">
+  <h2> blog </h2>
+  {% if site.posts  %}
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+      {% assign posts = site.posts | reverse %}
+      {% for item in posts limit: site.post_limit %}
+        <tr>
+          <th scope="row" class="badge grey font-weight-bold align-middle date ml-3">{{ item.date | date: "%b %d %Y" }}</th>
+          <td>
+            <a class="post-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            <br>
+            {{ item.description }}
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No posts so far...</p>
+  {% endif %}
+</div>
+
